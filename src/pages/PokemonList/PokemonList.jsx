@@ -4,16 +4,21 @@ import { getPokemon } from "../../services/api-calls"
 
 
 const PokemonList = (props) => {
-    const [pokemon, setPokemon] = useState()
+    const [pokemon, setPokemon] = useState([])
 
     useEffect(() => {
         getPokemon()
-        .then(pokemonData => console.log(pokemonData))
+        .then(pokemonData => setPokemon(pokemonData.results))
     }, [])
+
     return (
         <>
-            <h2>Pokemon List Page</h2>
-            <Pokemon />
+            <h2>Pokemon List</h2>
+            {pokemon.map(p =>
+            <Pokemon key={p.name} p={p} />
+            
+            )}
+            
         </>
     )
 }
