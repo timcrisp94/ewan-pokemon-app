@@ -7,10 +7,10 @@ import PokemonList from "./pages/PokemonList/PokemonList"
 function App() {
   return (
     <> 
-      <h1>sanity check</h1>
+      <h1>Ewan's Pokemon App</h1>
       <a href="/pokemon">To the Pokemon!</a>
       <Routes>
-        <Route to='/pokemon' element={<PokemonList />} />
+        <Route path='/pokemon' element={<PokemonList />} />
       </Routes>
     </>
   );
